@@ -234,7 +234,7 @@ let commentToDelete = null
             renderComments(comments, container)
             const allCommentElements = container.querySelectorAll('.comment');
             const lastCommentElement = allCommentElements[allCommentElements.length - 1];
-            lastCommentElement.scrollIntoView({ behavior: "smooth", block: "start" });
+            lastCommentElement.scrollIntoView({ behavior: "smooth", block: "center" });
             textarea.value = ''
         }
       }
