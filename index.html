@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive comments section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <!-- Pull dynamic content from the data.json file -->
+  <div class="app-container">
+    <div class="comments-scroll-container">
+        <div id="comments-container"></div>
+    </div>
+  </div>  
+  
+
+<div class="comment-wrap">
+    <div class="add-comment">
+    <img src="./images/avatars/image-juliusomo.png" alt="Your avatar" class="current-user-avatar">
+  <textarea  placeholder="Add a comment..."  class="comment-input" rows="3"></textarea>
+  <button class="send-button"> SEND </button>
+
+</div>
+</div>
+
+
+
+  <!-- <div class="add-comment-background">
+    
+  </div> -->
+   
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Triumphant307">Triumphant</a>.
+  </div> -->
+
+
+
+<dialog id="delete-dialog" class="dialog-box">
+  <div class="dialog-content">
+    <h3>Delete Comment</h3>
+    <p>Are you sure you want to delete this comment?</p>
+    <div class="dialog-actions">
+      <button class="cancel-delete">Cancel</button>
+      <button class="confirm-delete">Delete</button>
+    </div>
+  </div>
+</dialog>
+
+
+<dialog id="alert-dialog" class="alert-dialog">
+  <div class="dialog-box">
+    <h3 id="alert-title">Error</h3>
+    <p id="alert-message">Please Type something</p>
+    <div class="dialog-actions">
+      <button class="error-confirm" type="button">OK</button>
+    </div>
+  </div>
+</dialog>
+
+
+  <!-- <div id="alert-dialog" class="alert-dialog hidden">
+      <div class="dialog-box">
+        <h3>Error</h3>
+        <p>
+          Please Type something
+        </p>
+
+        <div class="dialog-actions">
+          <button class="error-confirm">OK</button>
+        </div>
+      </div>
+  </div> -->
+</body>
+<script src="main.js" defer></script>
+</html>
