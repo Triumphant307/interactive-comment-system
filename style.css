@@ -45,7 +45,7 @@ body {
   margin: 0 auto;
   max-height: fit-content;
   box-sizing: border-box;
-  margin-bottom: 30vh;
+  /* margin-bottom: 30vh; */
 }
 
 
@@ -210,6 +210,8 @@ body {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
+    padding-bottom: 200px;
+
     
 }
 
@@ -217,9 +219,10 @@ body {
     flex: 1;
     overflow-y: auto;
     position: relative;
+  
 }
 
-.comments-scroll-container::after {
+/* .comments-scroll-container::after {
   content: '';
   display: block;
   height: 20px; 
@@ -227,7 +230,7 @@ body {
   position: sticky;
   bottom: 0;
   z-index: 5; 
-}
+} */
 
 .comments-scroll-container::-webkit-scrollbar{
     width: 6px;
@@ -453,7 +456,19 @@ dialog#delete-dialog::backdrop {
   background: #e53e3e;
 }
 
+.loader{
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite    ;
+}
 
+@keyframes spin {
+  0%{ transform: rotate(0deg); }
+  100%{ transform: rotate(360deg);}
+}
 
 @media (max-width: 500px){
   body{

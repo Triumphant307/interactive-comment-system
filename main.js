@@ -2,7 +2,6 @@ fetch('./data.json')
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('comments-container');
-
     function createCommentElement(comment, isReply = false) {
       const isCurrentUser = comment.user.username === data.currentUser.username;
       const commentDiv = document.createElement('div');
@@ -135,10 +134,41 @@ fetch('./data.json')
       
     }
     }
+
+    // async function updateComments() {
+    // const loader = document.getElementById(loader)
+    //   const loaderTimeout = setTimeout(() =>{
+    //     loader.style.display = 'block'
+    //   } , 100)
+
+    //   await new Promise(resolve => setTimeout(resolve ,300))
+    //   const sortedComments = sortCommentByScore(comments)
+    //   saveCommentsToLocalStorage(comments)
+    //   comments = sortedComments
+    //   renderComments(comments)
+
+    //   clearTimeout(loaderTimeout)
+    //   loader.style.display = 'none'
+    // }
+
+
+
     let comments = loadCommentsFromLocalStorage() || data.comments;
     renderComments(comments , container)
 
 
+    // const loader = document.getElementById("loader")
+
+    //     const loaderTimeout = setTimeout(() =>{
+    //     loader.style.display = 'block'
+    //   } , 100)
+
+    //   window.addEventListener('load' , () => {
+    //     clearTimeout(loaderTimeout)
+    //     loader.style.display = 'none'
+    //     console.log("timeout");
+        
+    //   })
 
   
 
@@ -458,6 +488,8 @@ let commentToDelete = null
       } , 300)
      }
      else renderComments(sortedComments , container)
+
+    
     }
       
 
