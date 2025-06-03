@@ -162,7 +162,7 @@ fetch('./data.json')
     const loader = document.getElementById('loader')
     const loaderTimeout = setTimeout(() =>{
       loader.style.display = 'block'
-    } , 500)
+    } , 100)
 
     window.addEventListener('load' , () => {
       clearTimeout(loaderTimeout)

@@ -510,6 +510,57 @@ dialog#delete-dialog::backdrop {
 
   .add-comment{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+  }
+
+  .comment-input{
+    order: 1;
+  }
+
+  .current-user-avatar{
+    order: 2;
+  }
+
+  .send-button{
+    order: 3;
+  }
+
+  .vote-counter{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100px;
+  }
+
+  .vote-counter, .actions{
+   order: 4;
+   justify-content: flex-end;
+  }
+
+  .comment-text{
+    order: 1;
+  }
+
+  .reply-btn{
+    /* display: none; */
+    order: 4;
+  }
+
+  .comment-header{
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; */
+    /* flex-direction: column; */
+    align-items: flex-start;
+  }
+
+  .comment-header > span{
+    font-size: 14px;
+  }
+
+ 
+  .avatar{
+    width: 50px;
   }
 }
