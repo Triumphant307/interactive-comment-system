@@ -117,11 +117,11 @@ body {
   gap: 20px;
 }
 
-/* .comment.fade-out{
+.comment.fade-out{
   opacity: 0;
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
-} */
+}
 
 #comments-container {
     /* transform: scale(0.95); */
@@ -474,12 +474,16 @@ dialog#delete-dialog::backdrop {
 }
 
 .loader{
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #3498db;
+  border: 6px solid var(--moderate-blue);
+  border-top: 6px solid var( --light-grayish-blue);
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  animation: spin 1s linear infinite    ;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  z-index: 99999;
+  animation: spin 1s linear infinite ;
 }
 
 @keyframes spin {

@@ -157,19 +157,17 @@ fetch('./data.json')
     renderComments(comments , container)
 
 
-    // const loader = document.getElementById("loader")
 
-    //     const loaderTimeout = setTimeout(() =>{
-    //     loader.style.display = 'block'
-    //   } , 100)
 
-    //   window.addEventListener('load' , () => {
-    //     clearTimeout(loaderTimeout)
-    //     loader.style.display = 'none'
-    //     console.log("timeout");
-        
-    //   })
+    const loader = document.getElementById('loader')
+    const loaderTimeout = setTimeout(() =>{
+      loader.style.display = 'block'
+    } , 500)
 
+    window.addEventListener('load' , () => {
+      clearTimeout(loaderTimeout)
+      loader.style.display = 'none'
+    })
   
 
     document.addEventListener('click' , e => {
