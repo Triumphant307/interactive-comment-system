@@ -491,11 +491,24 @@ let commentToDelete = null
 
     
     }
-      
+    
 
     })
 
   })
   .catch(error => {
+    
     console.error("Error loading JSON:", error);
+    const errorDialog = document.getElementById('error-dialog')
+    errorDialog.showModal()
+    console.log(errorDialog);
+  
+    document.addEventListener('DOMContendLoaded', () =>{
+    const errorDialog = document.getElementById('error-dialog')
+    const closeBtn = document.getElementById('error-close-btn')
+    closeBtn.addEventListener('click' , () => {
+      errorDialog.close()
+    })
+    })
+    
   });

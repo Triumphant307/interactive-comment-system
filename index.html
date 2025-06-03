@@ -30,8 +30,8 @@
 <div class="comment-wrap">
     <div class="add-comment">
     <img src="./images/avatars/image-juliusomo.png" alt="Your avatar" class="current-user-avatar">
-  <textarea  placeholder="Add a comment..."  class="comment-input" rows="3"></textarea>
-  <button class="send-button"> SEND </button>
+    <textarea  placeholder="Add a comment..."  class="comment-input" rows="3"></textarea>
+    <button class="send-button"> SEND </button>
 
 </div>
 </div>
@@ -71,6 +71,16 @@
   </div>
 </dialog>
 
+
+<dialog id="error-dialog" class="error-dialog">
+  <div class="dialog-box">
+    <h3>Error</h3>
+    <p id="error-dialog"> ⚠️ Failed to load comments, Please try again </p>
+    <div class="dialog-actions">
+      <button class="error-confirm" id="error-close-btn" type="button">CLOSE</button>
+    </div>
+  </div>
+</dialog>
 
   <!-- <div id="alert-dialog" class="alert-dialog hidden">
       <div class="dialog-box">
