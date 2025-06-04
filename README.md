@@ -1,9 +1,5 @@
 # 💬 Interactive Comment System
 
-![Design preview for the Interactive comments section coding challenge](preview.jpg)
-
-
-
 A dynamic and fully functional comment system built using **HTML**, **CSS**, and **Vanilla JavaScript** — no frameworks or libraries involved.
 
 ## 🚀 Features
@@ -31,6 +27,7 @@ A dynamic and fully functional comment system built using **HTML**, **CSS**, and
 - Improving user interaction without using frameworks
 
 ## 📸 Demo
+![Design preview for the Interactive comments section coding challenge](preview.jpg)
 
 🔗 **Live Demo**: [https://triumphant307.github.io/interactive-comment-system/](https://triumphant307.github.io/interactive-comment-system/)  
 📦 **GitHub Repo**: [https://github.com/Triumphant307/interactive-comment-system](https://github.com/Triumphant307/interactive-comment-system)
