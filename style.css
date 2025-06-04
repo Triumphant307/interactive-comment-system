@@ -509,20 +509,47 @@ dialog#delete-dialog::backdrop {
   }
 
   .add-comment{
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
+    position: relative;
   }
 
   .comment-input{
     order: 1;
+    width: 100%;
   }
 
-  .current-user-avatar{
+  .comment-wrap{
+    padding-left: 30px;
+
+  }
+
+  .current-user-avatar,
+  .send-button{
     order: 2;
   }
 
-  .send-button{
-    order: 3;
+  .add-comment::after {
+    content: '';
+    display: block;
+    width: 100%;
+  }
+
+
+    .add-comment > .current-user-avatar,
+  .add-comment > .send-button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .current-user-avatar,
+  .send-button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+   .current-user-avatar {
+    margin-right: 10px;
   }
 
   .vote-counter{
@@ -562,5 +589,12 @@ dialog#delete-dialog::backdrop {
  
   .avatar{
     width: 50px;
+  }
+
+  .comments-scroll-container::-webkit-scrollbar-thumb{
+    display: none;
+  }
+  .comments-scroll-container::-webkit-scrollbar-track{
+    display: none;
   }
 }
