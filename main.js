@@ -19,7 +19,7 @@ fetch('./data.json')
             <img src="${comment.user.image.png}" alt="${comment.user.username}" class="avatar">
             <span class="username">${comment.user.username}</span>
             ${isCurrentUser ? '<span class="you-badge">you</span>' : ''}
-            <span class="timestamp">${comment.createdAt}</span>
+            <span class="timestamp">${formatTime(comment.createdAt)}</span>
             <div class="actions">
               ${isCurrentUser ? `
                 <button class="action-btn delete-btn" data-id="${comment.id}">
@@ -80,7 +80,7 @@ fetch('./data.json')
          const replyForm = document.createElement('div');
     replyForm.className = 'reply-form-container';
     replyForm.innerHTML = `
-    <img src="./images/avatars/image-juliusomo.png" alt="Your avatar" class="current-user-avatar">
+    <img src=${currentUserImage} alt="Your avatar" class="current-user-avatar">
       <textarea class="reply-textarea" placeholder="Write your reply..."></textarea>
       <div class="reply-form-actions">
         <button class="submit-reply">REPLY</button>
@@ -93,9 +93,9 @@ fetch('./data.json')
     function createNewComment(text , currentUser){
       return (
         {
-             id: Date.now(),
+                id: Date.now(),
                 content: text,
-                createdAt: 'Just now',
+                createdAt: new Date().toISOString(),
                 score: 0,
                 user: currentUser,
                 replies:[]
@@ -107,12 +107,44 @@ fetch('./data.json')
       return ({
             id: Date.now(), 
             content: text,
-            createdAt: "Just now",
+            createdAt: new Date().toISOString(),
             score: 0,
             replyingTo,
             user: currentUser
       })
     }
+
+    function formatTime(timestamp){
+      const now = new Date()
+      const then = new Date(timestamp)
+      const seconds = Math.floor((now - then) / 1000)
+
+      if(isNaN(seconds)) return 'Invalid time'
+
+      if(seconds < 60) return 'Just now'
+
+       const minutes = Math.floor(seconds / 60)
+      if(minutes < 60) return `${minutes} minutes${minutes === 1 ? '' : 's'} ago`
+
+      const hours = Math.floor(minutes / 60)
+      if(hours < 24) return `${hours} hour${hours === 1 ? '' : 's'} ago`
+
+      const days = Math.floor(hours / 24)
+      if(days < 7) return `${days} day${days === 1 ? '' : 's'} ago`
+
+      const weeks = Math.floor(days /7) 
+      if(weeks < 4) return `${weeks} week${weeks === 1 ? '' : 's'} ago`
+
+      const months = Math.floor(days / 30)
+      if(months < 12) return `${months} month${months === 1 ? '' : 's'} ago`
+
+      const years = Math.floor(days / 365)
+      return `${years} year${years === 1 ? '' : 's'} ago`
+
+
+    }
+
+    
 
     function saveCommentsToLocalStorage(comments){
       try { localStorage.setItem('commentsData' , JSON.stringify(comments))
