@@ -203,7 +203,6 @@ fetch('./data.json')
   
 
     document.addEventListener('click' , e => {
-//   const sendBtn = e.target.closest('.send-button')
 let commentToDelete = null
   const replyBtn = e.target.closest('.reply-btn');
   if (replyBtn) {
@@ -323,11 +322,6 @@ let commentToDelete = null
 
     document.querySelector('.confirm-delete').addEventListener('click', () => {
         if(commentToDelete){
-            // const next = commentToDelete.nextElementSibling;
-            // if(next && next.classList.contains('replies-container') && next.children.length === 0){
-            //     next.remove();
-            // }
-            // commentToDelete.remove();
             const commentId = parseInt(commentToDelete.dataset.id)
 
             let deleted = false
